@@ -72,10 +72,7 @@ and also add in Postman Header section key: "Authorization" and Value: "Bearer <
   "product_id": 1
 }
 
-    The response will contain a full url with sessionId.
-
-    Copy this link and past any browser url section then it will be go to payment option.
-
-    Use Stripe test cards (4242 4242 4242 4242) to complete payment.
-
-    Success and cancel URLs redirect.
+The response will contain a full url with sessionId.
+Copy this link and past any browser url section then it will be go to payment option.
+Use Stripe test cards (4242 4242 4242 4242) to complete payment.
+Success and cancel URLs redirect.

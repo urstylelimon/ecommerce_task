@@ -1,3 +1,4 @@
+import os
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -6,6 +7,8 @@ from .serializers import ProfileSerializer, ProductSerializer
 from .models import Product
 from rest_framework.pagination import PageNumberPagination
 import stripe
+from dotenv import load_dotenv
+load_dotenv()
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -30,7 +33,8 @@ def product_list(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def create_checkout_session(request):
-    # stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+    stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+
     product_id = request.data.get('product_id')
     product = Product.objects.get(id=product_id)
 

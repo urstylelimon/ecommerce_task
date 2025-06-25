@@ -1,5 +1,9 @@
 from pathlib import Path
-import cloudinary_storage
+import cloudinary
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-53zg32xmbuf48i(wojh^4!l9r(6i6ln5nyhp(g6oduo*w=9y84'
@@ -106,14 +110,14 @@ AUTH_USER_MODEL = 'store.User'
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Cloudinary configuration
-import cloudinary
 
 cloudinary.config(
-    cloud_name='dwuigqjfe',
-    api_key='343421524249758',
-    api_secret='rIFY5LkdRSsKWY0-FfRvS7wLY0s',
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET'),
     secure=True
 )
+
 
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

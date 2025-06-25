@@ -55,18 +55,18 @@ you will get a refresh and access token.
 ------------------------------------------------
 * For Cetegory
 Use postman to send Post request : "http://127.0.0.1:8000/api/products/"
-and also add in Postman Header section key: category and Value: Bag
+and also add in Postman Header section key: "category" and Value: "Bag"
 
 
 * For profile
 Use postman to send Post request : "http://127.0.0.1:8000/api/profile/"
-and also add in Postman Header section key: Authorization and Value: Bearer <Access key>
+and also add in Postman Header section key: "Authorization" and Value: "Bearer <Access key>"
 
 
 *Testing Stripe Payments
 
 Use Postman to send a POST request to: "http://127.0.0.1:8000/api/checkout-session/" with JSON body:
-and also add in Postman Header section key: Authorization and Value: Bearer <Access key>
+and also add in Postman Header section key: "Authorization" and Value: "Bearer <Access key>"
 
 {
   "product_id": 1
